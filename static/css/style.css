@@ -1,6 +1,30 @@
 body {
   padding-top: 20px;
 }
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.starter-regullar {
+  padding: 40px 50px;
+  text-align: left;
+}
+ul.course {
+  list-style-type: none;
+}
+li.course {
+  font-weight: bold;
+  padding: 10px;
+}
+ol.course {
+  font-weight: normal;
+  font-variant:normal;
+}
+.navbar-inverse .navbar-brand:hover, 
+.navbar-inverse .navbar-brand:focus {
+  background-color: transparent;
+  color: #999999;
+}
 
 .footer {
   padding-top: 40px;
