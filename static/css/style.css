@@ -35,9 +35,7 @@ h.text { text-align:  center; margin-bottom: 10px;font-size: 28px;color:#040404}
 .con_title{font-style: italic;text-decoration :underline; font-weight: bold;font-size: 25px;margin-left: 90px}
 .t{text-align:  center;margin-top:10px}
 .t2{color:#373DF0;font-size: 120%;}
-.adress{width: 604px; height: 342px; border: 2px solid #CCA5D1;float:left;margin-left:80px; margin-top:25px}
-.label-success_2 {
-  background-color: #040404;
-}
-
+#adress{width: 604px; height: 342px; border: 2px solid #CCA5D1;float:left;margin-left:80px; margin-top:25px}
+.label-success_2 { background-color: #040404;}
+#label{text-align:  center; margin-bottom: 20px;font-size: 20px;color:#040404;text-decoration :underline}
 
