@@ -13,7 +13,7 @@ h.text { text-align:  center; margin-bottom: 10px;font-size: 28px;color:#040404}
     padding: 5px;
     margin: 0 auto;}
 .box_contact{padding: 10px;  height: 560px;outline: 1px solid #000;margin: 20px}
-.image{width: 244px; height: 244px; border: 5px solid #CCA5D1; float:left;margin: 30px}
+#image{width: 244px; height: 244px; border: 5px solid #CCA5D1; float:left;margin: 30px}
 .boss_contacts{width: 300px; height: 500px; border: 2px solid #CCA5D1;float:left;margin:20px}
 #id2{text-align:right; font-size: 30px; color: #000000;}
 .con_title{font-style: italic;text-decoration :underline; font-weight: bold;font-size: 25px;margin-left: 90px}
