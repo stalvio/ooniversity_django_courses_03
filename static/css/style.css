@@ -53,7 +53,7 @@ h.text { text-align:  center; margin-bottom: 10px;font-size: 28px;color:#040404}
 .fi{background-color:#EFEEF0;text-align:  center;font-style:italic;font-size: 18px;}
 .menu_title{background-color:#848995;text-align:  center;font-size: 22px;}
 .image_profile{width: 425px; height: 590px; border: 2px solid #000000;margin-left:20px;float:left}
-.box_name{float: left; border: 2px solid #000000;background-color:#EFEEF0; width: 300px; height: 100px; align:center;padding: 30px;margin-left:80px;border-radius: 10px;margin-top: 20px;  }
+.box_name{float: left; border: 2px solid #000000;background-color:#EFEEF0; width: 300px; height: 100px; padding: 30px;margin-left:80px;margin-top: 20px;  }
 #prof_name{color:black; font-style: italic;text-align: center; font-size: 36px; margin-top: 30px; text-decoration :underline;}
 .pers_info {
   margin-top: 40px;
@@ -62,8 +62,7 @@ h.text { text-align:  center; margin-bottom: 10px;font-size: 28px;color:#040404}
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  
 }
 .panel-heading-2 {
   padding: 10px 15px;
@@ -84,8 +83,7 @@ h.text { text-align:  center; margin-bottom: 10px;font-size: 28px;color:#040404}
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);}
+  }
 .panel-heading-3 {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
@@ -97,5 +95,5 @@ h.text { text-align:  center; margin-bottom: 10px;font-size: 28px;color:#040404}
   background-color:#F24F70;
   border: 1px solid #000000;
 }
-.row_course{background-color:#EFEEF0;text-align:  center;font-style:italic;font-size: 18px;rowspan:6}
-.row_week{background-color:#EFEEF0;text-align:  center;font-style:italic;font-size: 18px;colspan:3}
+.row_course{background-color:#EFEEF0;text-align:  center;font-style:italic;font-size: 18px;}
+.row_week{background-color:#EFEEF0;text-align:  center;font-style:italic;font-size: 18px;}
