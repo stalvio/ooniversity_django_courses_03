@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	{% load staticfiles %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>list with students</title>
-    <link href= "../static/css/style.css" rel = "stylesheet">
+    <link href= "{% static 'css/style.css' %}" rel = "stylesheet">
     <!-- Bootstrap -->
-    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,124 +18,114 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="fon" background="../static/images/room.jpg">
+  <body class="fon" background="{% static 'images/room.jpg' %}">
     <nav class="navbar navbar-inverse">
-  
-      <a class="navbar-brand" href="index.html">Main</a>
-      <a class="navbar-brand" href="contact.html">Contacts</a>
-      <a class="navbar-brand" href="student_list.html">Students</a>
+     <a class="navbar-brand" href="{% url 'index' %}">Main</a>
+     <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+	 <a class="navbar-brand" href="{% url 'student_list' %}">Students</a>
     </nav>
-
-    <div class="panel panel-default">
-       
+     <div class="panel panel-default">      
       <div class="panel-heading"><h1>Список студентов курса PyBursa</h1></div>
-        
-    <!-- Table -->
         <table class="table">
-      <tr>
-           <th class="title_style">No</th>
+          <tr>
+            <th class="title_style">No</th>
             <th class="title_style">Surname</th>
-	      <th class="title_style">Name</th> 
-                 <th class="title_style">Address</th>
-                    <th class="title_style">Skype</th>
-       </tr>
-       <tr>
-           <td><a href="student_detail.html">1</a></td>
+	        <th class="title_style">Name</th> 
+            <th class="title_style">Address</th>
+            <th class="title_style">Skype</th>
+         </tr>
+         <tr>
+           <td><a href="{% url 'student_detail' %}">1</a></td>
             <td class = "fi">Neto</td>
-	      <td class = "fi">Stalvio</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект Победы 70, кв. 130</td>
-                    <td class="skype">stalvio90210</td>
-       </tr>
+	        <td class = "fi">Stalvio</td> 
+            <td class = "fi">Украина, г. Харьков, проспект Победы 70, кв. 130</td>
+            <td class="skype">stalvio90210</td>
+        </tr>
+        <tr>
+           <td>2</td>
+           <td class = "fi">Babichuk</td>
+	       <td class = "fi">Aleksander</td> 
+           <td class = "fi">Украина, г. Харьков, ул. Кирова 5, кв. 10</td>
+           <td class="skype">banzaj.te.ua</td>
+        </tr>
        <tr>
-              <td>2</td>
-            <td class = "fi">Babichuk</td>
-	      <td class = "fi">Aleksander</td> 
-                 <td class = "fi">Украина, г. Харьков, ул. Кирова 5, кв. 10</td>
-                    <td class="skype">banzaj.te.ua</td>
-       </tr>
-       <tr>
-            <td>3</td>
-            <td class = "fi">Caplin</td>
-	      <td class = "fi">Boris</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект Тракторостроителей 42б, кв 100 </td>
-                    <td class="skype">boyderman1</td>
+           <td>3</td>
+           <td class = "fi">Caplin</td>
+	       <td class = "fi">Boris</td> 
+           <td class = "fi">Украина, г. Харьков, проспект Тракторостроителей 42б, кв 100 </td>
+           <td class="skype">boyderman1</td>
      </tr>
            <tr>
-            <td>4</td>
-            <td class = "fi">Bondar</td>
-	      <td class = "fi">Viktor</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект ул.Социалистическая 17, кв. 5</td>
-                    <td class="skype">viktorbo108</td>
+           <td>4</td>
+           <td class = "fi">Bondar</td>
+	       <td class = "fi">Viktor</td> 
+           <td class = "fi">Украина, г. Харьков, проспект ул.Социалистическая 17, кв. 5</td>
+           <td class="skype">viktorbo108</td>
      </tr>
-           <tr>
-            <td>5</td>
-            <td class = "fi">Garraro</td>
-	      <td class = "fi">Denis</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект Победы д.54 кв. 10</td>
-                    <td class="skype">wer1171</td>
+     <tr>
+       <td>5</td>
+       <td class = "fi">Garraro</td>
+	   <td class = "fi">Denis</td> 
+       <td class = "fi">Украина, г. Харьков, проспект Победы д.54 кв. 10</td>
+       <td class="skype">wer1171</td>
      </tr>
-           <tr>
-            <td>6</td>
-            <td class = "fi">Barenshtein</td>
-	      <td class = "fi">Ilona</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект Ленина д.70 кв. 1</td>
-                    <td class="skype">ilona.barenshtein</td>
+     <tr>
+       <td>6</td>
+       <td class = "fi">Barenshtein</td>
+	   <td class = "fi">Ilona</td> 
+       <td class = "fi">Украина, г. Харьков, проспект Ленина д.70 кв. 1</td>
+       <td class="skype">ilona.barenshtein</td>
      </tr>
-           <tr>
-            <td>7</td>
-            <td class = "fi">Svetlna</td>
-	      <td class = "fi">Fursa</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект Победы д.3a кв. 1</td>
-                    <td class="skype">svetl9ch0k</td>
+     <tr>
+        <td>7</td>
+        <td class = "fi">Svetlna</td>
+	    <td class = "fi">Fursa</td> 
+        <td class = "fi">Украина, г. Харьков, проспект Победы д.3a кв. 1</td>
+        <td class="skype">svetl9ch0k</td>
      </tr>
- 
-           <tr>
-            <td>8</td>
-            <td class = "fi">Julia</td>
-	      <td class = "fi">Stec</td> 
-                 <td class = "fi">Украина, г. Ровно, проспект Победы д.3a кв. 1</td>
-                    <td class="skype">julia007</td>
+     <tr>
+        <td>8</td>
+        <td class = "fi">Julia</td>
+	    <td class = "fi">Stec</td> 
+        <td class = "fi">Украина, г. Ровно, проспект Победы д.3a кв. 1</td>
+        <td class="skype">julia007</td>
      </tr>
-
-           <tr>
-            <td>9</td>
-            <td class = "fi">Ivan </td>
-	      <td class = "fi">Ivanov</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект Победы д.3 кв. 11</td>
-                    <td class="skype">h0k111000</td>
+     <tr>
+        <td>9</td>
+        <td class = "fi">Ivan </td>
+	    <td class = "fi">Ivanov</td> 
+        <td class = "fi">Украина, г. Харьков, проспект Победы д.3 кв. 11</td>
+        <td class="skype">h0k111000</td>
      </tr>
-<tr>
-            <td>10</td>
-            <td class = "fi">Baren</td>
-	      <td class = "fi">Olia</td> 
-                 <td class = "fi">Украина, г. Харьков, ул. Ленина д.70 кв. 1</td>
-                    <td class="skype">ilona.barenshtein</td>
+     <tr>
+         <td>10</td>
+         <td class = "fi">Baren</td>
+	     <td class = "fi">Olia</td> 
+         <td class = "fi">Украина, г. Харьков, ул. Ленина д.70 кв. 1</td>
+         <td class="skype">ilona.barenshtein</td>
      </tr>
-<tr>
-            <td>11</td>
-            <td class = "fi">Vavilonova</td>
-	      <td class = "fi">Stacy</td> 
-                 <td class = "fi">Украина, г. Харьков, проспект Ленина д.170 кв. 61</td>
-                    <td class="skype">ilona</td>
+     <tr>
+         <td>11</td>
+         <td class = "fi">Vavilonova</td>
+	     <td class = "fi">Stacy</td> 
+         <td class = "fi">Украина, г. Харьков, проспект Ленина д.170 кв. 61</td>
+         <td class="skype">ilona</td>
      </tr>
-        </table>
-    </div>
+   </table>
+ </div>
 
 <div class="row">
   <div class="col-lg-6">
-    <div class="input-group">
-      
-        <button class="btn btn-default" type="button">Search</button><input type="text" class="form-control" placeholder="Search for some student...">
+    <div class="input-group">     
+      <button class="btn btn-default" type="button">Search</button><input type="text" class="form-control" placeholder="Search for some student...">
     </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for some student...">
-     
-        <button class="btn btn-default" type="button">Search</button>
-      
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+</div><!-- /.col-lg-6 -->
+<div class="col-lg-6">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for some student...">
+    <button class="btn btn-default" type="button">Search</button>      
+   </div><!-- /input-group -->
+ </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

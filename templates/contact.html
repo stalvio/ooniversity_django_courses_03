@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	{% load staticfiles %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Detale information - adress and contacts</title>
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,21 +19,19 @@
     <![endif]-->
   </head>
   <body>
-<nav class="navbar navbar-inverse">
-    <a class="navbar-brand" href="index.html">Main</a>
-    <a class="navbar-brand" href="contact.html">Contacts</a>
-    <a class="navbar-brand" href="student_list.html">Students</a>
-   
-  </nav>
-    
-  <div class="shapka">
-<img src="../static/images/University.jpg">
-  </div>
+   <nav class="navbar navbar-inverse">
+    <a class="navbar-brand" href="{% url 'index' %}">Main</a>
+    <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+	<a class="navbar-brand" href="{% url 'student_list' %}">Students</a> 
+   </nav>  
+   <div class="shapka">
+     <img src="{% static 'images/University.jpg' %}">
+   </div>
 
 
  
 <div class="boss_contacts" >
-   <div class="boss_image"><img class="image" src="../static/images/Albert.jpg"></div>  
+   <div class="boss_image"><img class="image" src="{% static 'images/Albert.jpg' %}"></div>  
      <h1 class="con_title">Director</h1>
 	<p class="t"><span class="t2">Name</span>: Albert Albert</p>
 	<p class="t"><span class="t2">Skype</span>: Albetino</p>
@@ -40,56 +39,48 @@
 	<p class="t"><span class="t2">Phone</span>: 00001111</p>
 </div>
   <div class="boss_contacts" >
-    <div class="boss_image"><img class="image" src="../static/images/Nikola.jpg"></div> 
-   <h1 class="con_title">Manager</h1>
-     <p class="t"><span class="t2">Name</span>: Nikola Nikola</p>
-	<p class="t"><span class="t2">Skype</span>: Nikolas</p>
-	<p class="t"><span class="t2">Email</span>:nikola@gmail.com</p>
-	<p class="t"><span class="t2">Phone</span>: 00002222</p>
-</div>
+    <div class="boss_image"><img class="image" src="{% static 'images/Nikola.jpg' %}"></div> 
+      <h1 class="con_title">Manager</h1>
+       <p class="t"><span class="t2">Name</span>: Nikola Nikola</p>
+	   <p class="t"><span class="t2">Skype</span>: Nikolas</p>
+	   <p class="t"><span class="t2">Email</span>:nikola@gmail.com</p>
+	   <p class="t"><span class="t2">Phone</span>: 00002222</p>
+  </div>
 	<div class="boss_contacts" >
-	  <div class="boss_image"><img class="image" src="../static/images/Steve.jpg"></div> 
-	<h1 class="con_title">Founder</h1>
-		<p class="t"><span class="t2">Name</span>: Steve Steve</p>
-		<p class="t"><span class="t2">Skype</span>: stevenson</p>
-		<p class="t"><span class="t2">Email</span>: steve@gmail.com</p>
-		<p class="t"><span class="t2">Phone</span>: 00003333</p>
-</div>
-        <div id="adress"><img src="../static/images/adress.jpg">
-		
-		<span id="label"> Adress:</span>
-        <div id="adr_box">
-          <p ><span class="t2">City</span>: <span id="t2">Kharkov</span></p>
-	  <p ><span class="t2">Street</span>: <span id="t3">lenina, 56</span></p>
-	  <p ><span class="t2">Subway</span>: <span id="t4">"Botanichniy Sad"</span>,<span id="t5">"23 Avgusta"</span></p> 
-       
-  
-
-<button type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Start your new future with us!!!
-</button>
- </div>
-</div>
+	  <div class="boss_image"><img class="image" src="{% static 'images/Steve.jpg' %}"></div> 
+	  <h1 class="con_title">Founder</h1>
+      <p class="t"><span class="t2">Name</span>: Steve Steve</p>
+	  <p class="t"><span class="t2">Skype</span>: stevenson</p>
+	  <p class="t"><span class="t2">Email</span>: steve@gmail.com</p>
+	  <p class="t"><span class="t2">Phone</span>: 00003333</p>
+    </div>
+    <div id="adress"><img src="{% static 'images/adress.jpg' %}">		
+	  <span id="label"> Adress:</span>
+      <div id="adr_box">
+         <p ><span class="t2">City</span>: <span id="t2">Kharkov</span></p>
+	     <p ><span class="t2">Street</span>: <span id="t3">lenina, 56</span></p>
+	     <p ><span class="t2">Subway</span>: <span id="t4">"Botanichniy Sad"</span>,<span id="t5">"23 Avgusta"</span></p> 
+         <button type="button" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Start your new future with us!!!
+         </button>
+       </div>
+    </div>
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
-      
-        <button class="btn btn-default" type="button">Search</button><input type="text" class="form-control" placeholder="Search for some student...">
+      <button class="btn btn-default" type="button">Search</button><input type="text" class="form-control" placeholder="Search for some student...">
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search for some student...">
-      
-        <button class="btn btn-default" type="button">Search</button>
-      
+        <button class="btn btn-default" type="button">Search</button>     
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../static/js/bootstrap.js"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
   </body>
 </html>

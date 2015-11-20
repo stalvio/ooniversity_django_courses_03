@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	{% load staticfiles %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>PyBursa-main page</title>
     <!-- Mystyles  -->
-    <link href= "../static/css/style.css" rel = "stylesheet">
+    <link href= "{% static 'css/style.css' %}" rel = "stylesheet">
 
     <!-- Bootstrap -->
-    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,44 +22,36 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse">
-  
-      <a class="navbar-brand" href="index.html">Main</a>
-      <a class="navbar-brand" href="contact.html">Contacts</a>
-      <a class="navbar-brand" href="student_list.html">Students</a>
+      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
+      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+      <a class="navbar-brand" href="{% url 'student_list' %}">Students</a>
     </nav>
-
-  <div class="jumbotron">
-        <h2>"PyBursa"</h2>
-	<h2>Description</h2>
-         <div class="text">
+    <div class="jumbotron">
+      <h2>"PyBursa"</h2>
+	  <h2>Description</h2>
+        <div class="text">
          <p>Our course  basic on learning high-level programming language - <span class="prog_lang">Python</span>. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as <span class="prog_lang">C++</span> or <span class="prog_lang">Java</span>. The language provides constructs intended to enable clear programs on both a small and large scale. So don't lose your time and join to our <span class="prog_lang">Python</span> programmic family.
+        </div>  
      </div>
-   
-  </div>
- <h1 id="id1" >Program</h1>
-
-   <div class="jumbotron_2">
-     <div class="text">
-	<span class="label">PYTHON</span>
-
+<h1 id="id1" >Program</h1>
+<div class="jumbotron_2">
+  <div class="text">
+    <span class="label">PYTHON</span>
      <p>Python is also a high-level programming language. A high-level language has advanced features which let the programmer to tell the computer what to do without having to worry about how the computer is going to do that as much as low-level programming languages. This makes writing programs easier and faster.</p>
-      </div>
-   </div>	
-
-   <div class="jumbotron_2">
-     <div class="text">
+  </div>
+</div>	
+<div class="jumbotron_2">
+  <div class="text">
   	<span class="label"> Django</span>
-
-       <p>Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source. </p>
-     </div>  
-   </div>
-   <div class="jumbotron_2">
-      <div class="text">
+    <p>Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source. </p>
+  </div>  
+</div>
+<div class="jumbotron_2">
+  <div class="text">
 	<span class="label"> CSS</span>
-
-      <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL.</p>
-     </div>
-   </div>
+     <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL.</p>
+  </div>
+</div>
 
 
 
@@ -66,6 +59,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../static/js/bootstrap.js"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
   </body>
 </html>
