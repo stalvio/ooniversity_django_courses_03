@@ -6,11 +6,8 @@ import math
 x1=x2= None
  
 def quadratic_results(request):	
-	a = request.GET['a']
-	b = request.GET['b']
-	c = request.GET['c']
-	value = {'a': a, 'b': b, 'c': c}
-	error = {'er_a': '', 'er_b': '', 'er_c': ''}	
+	value = {'a':request.GET['a'], 'b': request.GET['b'], 'c': request.GET['c']}
+	error = {}	
 	flag = False			 
 	for item in value.keys():
 		if item == 'a' and value[item]== '0':
@@ -32,7 +29,6 @@ def quadratic_results(request):
 	if not flag:		
 		di = diskr(value['a'], value['b'], value['c'])
 		value['diskrim'], value['Korn']	= di['diskrim'], di['Korn']
-	
 	return render(request, 'results.html', value)	
 
 def diskr(a,b,c):
