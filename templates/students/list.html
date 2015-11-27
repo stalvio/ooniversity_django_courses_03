@@ -13,7 +13,7 @@
     <nav class="navbar navbar-inverse">
       <a class="navbar-brand" href="{% url 'index' %}">Main</a>
       <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
-      <a href="{% url 'students:list_view' %}?course_id={{course_num}}">Students</a>
+      <a href="{% url 'students:list_view' %}">Students</a>
     </nav>
    
 	{% if course_detail != 0 %}
