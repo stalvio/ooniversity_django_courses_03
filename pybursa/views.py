@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 
 from polls.models import Choice, Question
+from courses.models import Course, Lesson
 
 def contact(request):
 	return render(request, 'contact.html')
@@ -15,6 +16,7 @@ def student_detail(request):
 	return render(request, 'student_detail.html')
 
 def index(request):
-    return render(request, 'index.html')	
+	courses =  Course.objects.all()
+	return render(request, 'index.html', {'courses': courses})	
 
 

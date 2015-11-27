@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	{% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PyBursa-main page</title>
+    <link href= "{% static 'css/style.css' %}" rel = "stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
+      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+      <a class="navbar-brand" href="{% url 'students:list_view'%}?course_id={{course_num}}">Students</a>
+    </nav>
+	
+    <div class="jumbotron">
+	<h1 class = "text" >{{ course_detail.name }}</h>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p class = "fi">{{ course_detail.description }}</p>
+	
+    </div>
+	<h class = "fi_course">Список уроков курса {{ course_detail.name }}</h>
+    <table class="table">	  
+          <tr>
+	    <th class="title_style">Номер</th>	
+            <th class="title_style">Тема</th>
+            <th class="title_style">Описание</th>
+	
+         </tr>
+	{% for lesson in lessons %}
+         <tr>
+	   <td class = "fi">{{ lesson.order }}</td>
+           <td class = "fi">{{ lesson.subject }}</td>
+           <td class = "fi">{{ lesson.description }}</td>
+        </tr>
+         {% endfor %}
+</body>
+</html>	

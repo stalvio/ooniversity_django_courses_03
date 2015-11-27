@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	{% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PyBursa-main page</title>
+    <!-- Mystyles  -->
+    <link href= "{% static 'css/style.css' %}" rel = "stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
+      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+      <a class="navbar-brand" href="{% url 'students:list_view' %}">Students</a>
+    </nav>
+
+    <h class = "fi_course">{{ student_detail.name }} {{ student_detail.surname }}</h>
+<div class = "stud_detail">	
+     <table class="table">
+      <tr>	   
+       <td class = "fi_course">дата рождения</td>
+       <td class = "fi_course">{{ student_detail.date_of_birth }}</td> 
+      </tr>
+      <tr>
+       <td class = "fi_course">адрес</td>
+       <td class = "fi_course">{{ student_detail.address }}</td> 
+      </tr>
+      <tr>
+       <td class = "fi_course">логин skype</td>
+       <td class = "fi_course">{{ student_detail.skype }}</td>
+      </tr>
+      <tr> 
+       <td class = "fi_course">телефон</td>
+       <td class = "fi_course">{{ student_detail.phone }}</td>
+      </tr>
+      <tr> 
+       <td class = "fi_course">курсы</td>
+       <td class = "fi_course">{% for course in student_detail.course_id %} <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p> {% endfor %}</td>
+      </tr> 	
+     </table> 
+</div>     
+  </body>
+</html>
