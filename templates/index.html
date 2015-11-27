@@ -24,7 +24,7 @@
     <nav class="navbar navbar-inverse">
       <a class="navbar-brand" href="{% url 'index' %}">Main</a>
       <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
-      <a class="navbar-brand" href="{% url 'students:list_view' %}">Students</a>
+      <a href="{% url 'students:list_view' %}">Students</a>
     </nav>
     <div class="jumbotron">
       <h2 text-align = "center" >"PyBursa"</h2>
@@ -45,7 +45,7 @@
          </tr>
 	{% for course in courses %}
          <tr>
-           <td class = "fi"><a href="{% url 'courses:detail' course.id %}">{{ course.name }}</a></td>
+           <td><a href="{% url 'courses:detail' course.id %}">{{ course.name }}</a></td>
             <td class = "fi">{{ course.short_description }}</td>
         </tr>
          {% endfor %}

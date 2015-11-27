@@ -24,7 +24,7 @@
     <nav class="navbar navbar-inverse">
       <a class="navbar-brand" href="{% url 'index' %}">Main</a>
       <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
-      <a class="navbar-brand" href="{% url 'students:list_view' %}">Students</a>
+      <a href="{% url 'students:list_view' %}">Students</a>
     </nav>
 
     <h class = "fi_course">{{ student_detail.name }} {{ student_detail.surname }}</h>
@@ -48,7 +48,7 @@
       </tr>
       <tr> 
        <td class = "fi_course">курсы</td>
-       <td class = "fi_course">{% for course in student_detail.course_id %} <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p> {% endfor %}</td>
+       <td >{% for course in student_detail.course_id %} <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p> {% endfor %}</td>
       </tr> 	
      </table> 
 </div>     
