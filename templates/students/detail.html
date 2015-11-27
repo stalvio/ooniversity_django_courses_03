@@ -22,29 +22,29 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse">
-      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
-      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+      <a href="{% url 'index' %}">Main</a>
+      <a href="{% url 'contact' %}">Contacts</a>
       <a href="{% url 'students:list_view' %}">Students</a>
     </nav>
 
-    <h class = "fi_course">{{ student_detail.name }} {{ student_detail.surname }}</h>
+    <h>{{ student_detail.name }} {{ student_detail.surname }}</h>
 <div class = "stud_detail">	
      <table class="table">
       <tr>	   
        <td class = "fi_course">дата рождения</td>
-       <td class = "fi_course">{{ student_detail.date_of_birth }}</td> 
+       <td>{{ student_detail.date_of_birth }}</td> 
       </tr>
       <tr>
        <td class = "fi_course">адрес</td>
-       <td class = "fi_course">{{ student_detail.address }}</td> 
+       <td>{{ student_detail.address }}</td> 
       </tr>
       <tr>
        <td class = "fi_course">логин skype</td>
-       <td class = "fi_course">{{ student_detail.skype }}</td>
+       <td>{{ student_detail.skype }}</td>
       </tr>
       <tr> 
        <td class = "fi_course">телефон</td>
-       <td class = "fi_course">{{ student_detail.phone }}</td>
+       <td>{{ student_detail.phone }}</td>
       </tr>
       <tr> 
        <td class = "fi_course">курсы</td>
