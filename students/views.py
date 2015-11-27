@@ -20,7 +20,6 @@ def list_view(request):
 			student.course_id = i
 			student.courses_list = Course.objects.filter(student = student)
 			i += 1
-	print students
 	return render(request, 'students/list.html', {'students': students, 'course_detail': course_detail})
 
 def detail(request, pk):
