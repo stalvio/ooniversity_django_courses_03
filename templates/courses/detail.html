@@ -25,8 +25,31 @@
 	<p class = "fi">{{ course_detail.description }}</p>
 	
     </div>
-	<h class = "fi_course"> курса {{ course_detail.name }}</h>
-    <table class="table">	  
+	<h class = "fi_course" font-size = "20px"> Преподаватели</h>
+	<table class="table" border="1" width = "90%">	  
+          <tr>
+	    <th class="title_style">Учитель</th>
+	  </tr>
+	  <tr>
+	    <th><a href="{% url 'coaches:detail' course_detail.coach.id %}">{{ course_detail.coach.first_name }} {{ course_detail.coach.last_name }}</a></th>
+	  </tr>
+	  <tr>
+	    <td><li class = "row_course" >{{ course_detail.coach.description }}</li></td>
+	  </tr>	
+        </table>
+	<table class="table" border="1" width = "90%">	  
+          <tr>
+	    <th class="title_style">Ассистент</th>
+	  </tr>
+	  <tr>
+	    <th><a href="{% url 'coaches:detail' course_detail.assistant.id %}">{{ course_detail.assistant.first_name }} {{ course_detail.assistant.last_name }}</a></th>
+	  </tr>
+	  <tr>
+	    <td><li class = "row_course" >{{ course_detail.assistant.description }}</li></td>
+	  </tr>	
+        </table>
+	<h class = "fi_course"> Курс {{ course_detail.name }}</h>
+    <table class="table"  border="1">	  
           <tr>
 	    <th class="title_style">#</th>	
             <th class="title_style">Тема</th>
@@ -40,5 +63,6 @@
            <td class = "fi">{{ lesson.description }}</td>
         </tr>
          {% endfor %}
+    </table>
 </body>
 </html>	
