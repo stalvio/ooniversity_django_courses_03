@@ -31,23 +31,23 @@
 <div class = "stud_detail">	
      <table class="table">
       <tr>	   
-       <td class = "fi_course">дата рождения</td>
+       <td>дата рождения</td>
        <td>{{ student_detail.date_of_birth }}</td> 
       </tr>
       <tr>
-       <td class = "fi_course">адрес</td>
+       <td>адрес</td>
        <td>{{ student_detail.address }}</td> 
       </tr>
       <tr>
-       <td class = "fi_course">логин skype</td>
+       <td>логин skype</td>
        <td>{{ student_detail.skype }}</td>
       </tr>
       <tr> 
-       <td class = "fi_course">телефон</td>
+       <td>телефон</td>
        <td>{{ student_detail.phone }}</td>
       </tr>
       <tr> 
-       <td class = "fi_course">курсы</td>
+       <td>курсы</td>
        <td >{% for course in student_detail.course_id %} <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p> {% endfor %}</td>
       </tr> 	
      </table> 

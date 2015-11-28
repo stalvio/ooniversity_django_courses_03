@@ -13,7 +13,7 @@
     <nav class="navbar navbar-inverse">
       <a href="{% url 'index' %}">Main</a>
       <a href="{% url 'contact' %}">Contacts</a>
-      <a href="{% url 'students:list_view'%}?course_id={{course_num}}">Students</a>
+      <a href="{% url 'students:list_view' %}?course_id={{course_num}}">Students</a>
     </nav>
 	
     <div class="jumbotron">
@@ -28,9 +28,9 @@
 	<h>Список уроков курса {{ course_detail.name }}</h>
     <table class="table">	  
           <tr>
-	    <th class="title_style">Номер</th>	
-            <th class="title_style">Тема</th>
-            <th class="title_style">Описание</th>
+	    <th>Номер</th>	
+            <th>Тема</th>
+            <th>Описание</th>
 	
          </tr>
 	{% for lesson in lessons %}

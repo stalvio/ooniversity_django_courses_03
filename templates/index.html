@@ -22,8 +22,8 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse">
-      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
-      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+      <a href="{% url 'index' %}">Main</a>
+      <a href="{% url 'contact' %}">Contacts</a>
       <a href="{% url 'students:list_view' %}">Students</a>
     </nav>
     <div class="jumbotron">
@@ -39,14 +39,14 @@
 
 <table class="table">	  
           <tr>
-            <th class="title_style">Курс</th>
-            <th class="title_style">Описание</th>
+            <th>Курс</th>
+            <th>Описание</th>
 	
          </tr>
 	{% for course in courses %}
          <tr>
            <td><a href="{% url 'courses:detail' course.id %}">{{ course.name }}</a></td>
-            <td class = "fi">{{ course.short_description }}</td>
+            <td>{{ course.short_description }}</td>
         </tr>
          {% endfor %}
 </table>
