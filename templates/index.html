@@ -22,12 +22,12 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse">
-      <a href="{% url 'index' %}">Main</a>
-      <a href="{% url 'contact' %}">Contacts</a>
+      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
+      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
       <a href="{% url 'students:list_view' %}">Students</a>
     </nav>
     <div class="jumbotron">
-      <h2 text-align = "center" >"PyBursa"</h2>
+      <h2 text-align = "center">"PyBursa"</h2>
 	  <h2>Description</h2>
         <div class="text">
          <p>Our course  basic on learning high-level programming language - <span class="prog_lang">Python</span>. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as <span class="prog_lang">C++</span> or <span class="prog_lang">Java</span>. The language provides constructs intended to enable clear programs on both a small and large scale. So don't lose your time and join to our <span class="prog_lang">Python</span> programmic family.
@@ -39,14 +39,14 @@
 
 <table class="table">	  
           <tr>
-            <th>Курс</th>
-            <th>Описание</th>
+            <th class="title_style">Курс</th>
+            <th class="title_style">Описание</th>
 	
          </tr>
 	{% for course in courses %}
          <tr>
            <td><a href="{% url 'courses:detail' course.id %}">{{ course.name }}</a></td>
-            <td>{{ course.short_description }}</td>
+            <td class = "fi">{{ course.short_description }}</td>
         </tr>
          {% endfor %}
 </table>

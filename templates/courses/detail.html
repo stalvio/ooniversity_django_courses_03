@@ -11,33 +11,33 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse">
-      <a href="{% url 'index' %}">Main</a>
-      <a href="{% url 'contact' %}">Contacts</a>
-      <a href="{% url 'students:list_view' %}?course_id={{course_num}}">Students</a>
+      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
+      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
+      <a href="{% url 'students:list_view'%}?course_id={{course_num}}">Students</a>
     </nav>
 	
     <div class="jumbotron">
-	<h1>{{ course_detail.name }}</h>
+	<h1 class = "text" >{{ course_detail.name }}</h>
 	<p></p>
 	<p></p>
 	<p></p>
 	<p></p>
-	<p>{{ course_detail.description }}</p>
+	<p class = "fi">{{ course_detail.description }}</p>
 	
     </div>
-	<h>Список уроков курса {{ course_detail.name }}</h>
+	<h class = "fi_course">Список уроков курса {{ course_detail.name }}</h>
     <table class="table">	  
           <tr>
-	    <th>Номер</th>	
-            <th>Тема</th>
-            <th>Описание</th>
+	    <th class="title_style">Номер</th>	
+            <th class="title_style">Тема</th>
+            <th class="title_style">Описание</th>
 	
          </tr>
 	{% for lesson in lessons %}
          <tr>
-	   <td>{{ lesson.order }}</td>
-           <td>{{ lesson.subject }}</td>
-           <td>{{ lesson.description }}</td>
+	   <td class = "fi">{{ lesson.order }}</td>
+           <td class = "fi">{{ lesson.subject }}</td>
+           <td class = "fi">{{ lesson.description }}</td>
         </tr>
          {% endfor %}
 </body>
