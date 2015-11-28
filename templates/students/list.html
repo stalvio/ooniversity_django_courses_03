@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PyBursa-main page</title>
     <link href= "{% static 'css/style.css' %}" rel = "stylesheet">
-    <link href= "{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-inverse">
@@ -17,11 +17,11 @@
     </nav>
    
 	{% if course_detail != 0 %}
-    <h class ="fi_course" >Курс {{ course_detail.name }}{% endif %} </h>
-    <h class ="fi_course">Список студентов</h>	
+    <h class = "fi_course" >Курс {{ course_detail.name }}{% endif %} </h>
+    <h class = "fi_course">Список студентов</h>	
     <table class="table">	  
           <tr>
-	    <th class="title_style">#</th>	
+	    <th class="title_style">Номер</th>	
             <th class="title_style">фамилия имя</th>
             <th class="title_style">адрес</th>
 	    <th class="title_style">skype</th>
@@ -30,12 +30,12 @@
          </tr>
 	{% for student in students %}
          <tr>
-	   <td class ="fi">{{ student.course_id }}</td>
-           <td ><a href="{% url 'students:detail' student.id %}">{{ student.name }} {{ student.surname }} </a></td>
+	   <td class = "fi">{{ student.course_id }}</td>
+           <td ><a href="{% url 'students:detail' student.id %}">{{ student.surname }} {{ student.name }}</a></td>
            <td class = "fi">{{ student.address }}</td>
 	   <td class = "fi">{{ student.skype }}</td>
-	   <td>{% for course in student.courses_list %}
-		<p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p>
+	   <td class = "fi">{% for course in student.courses_list %}
+		<p><a href="{% url 'courses:detail' course.id %} ">{{ course }}</a></p>
 			{% endfor %} </td> 
         </tr>
 

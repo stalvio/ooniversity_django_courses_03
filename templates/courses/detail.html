@@ -13,7 +13,7 @@
     <nav class="navbar navbar-inverse">
       <a class="navbar-brand" href="{% url 'index' %}">Main</a>
       <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
-      <a href="{% url 'students:list_view'%}?course_id={{course_id}}">Students</a>
+      <a href="{% url 'students:list_view'%}?course_id={{course_num}}">Students</a>
     </nav>
 	
     <div class="jumbotron">
@@ -25,7 +25,7 @@
 	<p class = "fi">{{ course_detail.description }}</p>
 	
     </div>
-	<h class = "fi_course">План курса {{ course_detail.name }}</h>
+	<h class = "fi_course"> курса {{ course_detail.name }}</h>
     <table class="table">	  
           <tr>
 	    <th class="title_style">#</th>	
