@@ -17,8 +17,8 @@
     </nav>
    
 	{% if course_detail != 0 %}
-    <h class = "fi_course" >Курс {{ course_detail.name }}{% endif %} </h>
-    <h class = "fi_course">Список студентов</h>	
+    <h class ="fi_course" >Курс {{ course_detail.name }}{% endif %} </h>
+    <h class ="fi_course">Список студентов</h>	
     <table class="table">	  
           <tr>
 	    <th class="title_style">#</th>	
@@ -30,8 +30,8 @@
          </tr>
 	{% for student in students %}
          <tr>
-	   <td class = "fi">{{ student.course_id }}</td>
-           <td ><a href="{% url 'students:detail' student.id %}">{{ student.surname }} {{ student.name }}</a></td>
+	   <td class ="fi">{{ student.course_id }}</td>
+           <td ><a href="{% url 'students:detail' student.id %}">{{ student.name }} {{ student.surname }} </a></td>
            <td class = "fi">{{ student.address }}</td>
 	   <td class = "fi">{{ student.skype }}</td>
 	   <td>{% for course in student.courses_list %}
