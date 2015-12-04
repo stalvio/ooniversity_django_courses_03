@@ -1,10 +1,12 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
+from django import forms
 
 from polls.models import Choice, Question
 from courses.models import Course, Lesson
+
 
 def contact(request):
 	return render(request, 'contact.html')
@@ -18,5 +20,6 @@ def student_detail(request):
 def index(request):
 	courses =  Course.objects.all()
 	return render(request, 'index.html', {'courses': courses})	
+
 
 

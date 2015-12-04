@@ -1,48 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-	{% load staticfiles %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Detail information about student</title>
-    <link href= "{% static 'css/style.css' %}" rel = "stylesheet">
-    <!-- Bootstrap -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Student information{% endblock title %}
+{% block menu_student %}active{% endblock menu_stu %}
+{% block url_list_students %}{% url 'student_list' %}{% endblock url_list_students %}
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
- </head>
-  <body class="fon" background="../static/images/room.jpg">
-   <nav class="navbar navbar-inverse">
-     <a class="navbar-brand" href="{% url 'index' %}">Main</a>
-     <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
-     <a class="navbar-brand" href="{% url 'student_list' %}">Students</a>  
-    </nav>
-    <div class="Fio"><h1>Stalvio Neto</h1></div>
-    <div><img class="image_profile" src="{% static 'images/ilay.jpg' %}">
-     <div class="pers_info">
-       
+{% block content %} 
+<div class="Fio"><h1>Stalvio Neto</h1></div>
+  <div><img class="image_profile" src="{% static 'images/ilay.jpg' %}">
+    <div class="pers_info">   
       <div class="panel-heading-2">Personal Information</div>
         <table class="table">
-        <tr>
+          <tr>
             <td class = "menu_title">Surname</td>
-	      <td class = "fi">Neto</td> 
-        </tr>
-        <tr>
-            <td class = "menu_title">Name</td>
-	      <td class = "fi">Stalvio</td> 
-        </tr>
-        <tr>
+	    <td class = "fi">Neto</td> 
+           </tr>
+           <tr>
+             <td class = "menu_title">Name</td>
+	     <td class = "fi">Stalvio</td> 
+          </tr> 
+          <tr>
             <td class = "menu_title">Patronymic</td>
 	    <td class = "fi">Luisovich</td> 
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td class = "menu_title">Birth Date</td>
 	    <td class = "fi">25.05.1984</td> 
         </tr>
@@ -128,6 +108,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'js/bootstrap.js' %}"></script>
+{% endblock content %} 
   </body>
 </html>
 

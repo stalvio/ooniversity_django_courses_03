@@ -1,58 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-	{% load staticfiles %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PyBursa-main page</title>
-    <link href= "{% static 'css/style.css' %}" rel = "stylesheet">
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse">
-      <a class="navbar-brand" href="{% url 'index' %}">Main</a>
-      <a class="navbar-brand" href="{% url 'contact' %}">Contacts</a>
-      <a href="{% url 'students:list_view' %}">Students</a>
-    </nav>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Coach information{% endblock title %}
+{% block menu_main %}active{% endblock menu_main %}
 
-    <h class = "text_2">{{ coach_detail.user.get_full_name }}</h>
+{% block content %}
 
-    <div class = "stud_detail">	
-     <table class="table">
+<h class = "text_2">{{ coach_detail.user.get_full_name }}</h>
+  <div class = "stud_detail">	
+    <table class="table" border="1" width = "90%">
       <tr>	   
-       <td class = "fi_course">дата рождения</td>
-       <td class = "fi_course">{{ coach_detail.date_of_birth }}</td> 
+        <td class = "fi_course">дата рождения</td>
+        <td class = "fi_course">{{ coach_detail.date_of_birth|date:"j F, Y" }}</td> 
       </tr>
       <tr>
-       <td class = "fi_course">адрес</td>
-       <td class = "fi_course">{{ coach_detail.address }}</td> 
+        <td class = "fi_course">адрес</td>
+        <td class = "fi_course">{{ coach_detail.address }}</td> 
       </tr>
       <tr>
-       <td class = "fi_course">почта</td>
-       <td class = "fi_course">{{ coach_detail.user.email }}</td> 
+        <td class = "fi_course">почта</td>
+        <td class = "fi_course">{{ coach_detail.user.email }}</td> 
       </tr>	
       <tr>
-       <td class = "fi_course">логин skype</td>
-       <td class = "fi_course">{{ coach_detail.skype }}</td>
+        <td class = "fi_course">логин skype</td>
+        <td class = "fi_course">{{ coach_detail.skype }}</td>
       </tr>
       <tr> 
-       <td class = "fi_course">телефон</td>
-       <td class = "fi_course">{{ coach_detail.phone }}</td>
+        <td class = "fi_course">телефон</td>
+        <td class = "fi_course">{{ coach_detail.phone }}</td>
       </tr>
       <tr> 
-       <td class = "fi_course">курсы учитель</td>
-       <td>{% if coach_courses %}
+        <td class = "fi_course">курсы учитель</td>
+        <td>{% if coach_courses %}
 	  {% for course in coach_courses %}
 	<p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p><span>студенты курса</span> <a href="{% url 'students:list_view' %}?course_id={{course.id}}"><span class=" glyphicon glyphicon-home"></span></a>{% endfor %}{% endif %}</td>
       </tr> 
       <tr> 
-       <td class = "fi_course">курсы ассистент</td>
-       <td>{% if assistant_courses %}
+        <td class = "fi_course">курсы ассистент</td>
+        <td>{% if assistant_courses %}
 	  {% for course in assistant_courses %}
 	 <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p><span>студенты курса</span> <a href="{% url 'students:list_view' %}?course_id={{course.id}}"><span class=" glyphicon glyphicon-home"></span></a> {% endfor %}{% endif %}</td>
       </tr> 			
      </table> 	 
 
-  </body>
-</html>
+{% endblock content %}
