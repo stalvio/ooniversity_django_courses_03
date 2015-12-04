@@ -5,14 +5,14 @@
 
 {% block content %}
 {% if messages %}
-<ul class="messages">
+<ul>
 	{% for message in messages %}
 	<li>{{ message }}</li>
 	{% endfor %}
 </ul>
 {% endif %}
 
-<h class = "text_2">Редактирование данных студента</h>
+<h>Редактирование данных студента</h>
 <div>
   <form method="post" >
   {% csrf_token %}
