@@ -4,18 +4,29 @@
 {% block menu_students %}active{% endblock menu_students %}
 
 {% block content %} 
-  <h class = "fi_course">Список студентов</h>	
-    <table class="table" border="1" width = "90%">	  
-          <tr>
-	    <th class="title_style">#</th>	
-            <th class="title_style">фамилия имя</th>
-            <th class="title_style">адрес</th>
-	    <th class="title_style">skype</th>
-	    <th class="title_style">курсы</th>	
-	
-         </tr>
-	{% for student in students %}
-        {% include "include/students_include.html" %}
-         {% endfor %}
+{% if messages %}
+<ul class="messages">
+	{% for message in messages %}
+	<li>{{ message }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
 
+<h class = "fi_course">Список студентов</h>	
+{% include "include/students_include.html" %}
+	{% for student in students %}
+<tr>
+  <td class = "fi">{{ forloop.counter }}</td>
+  <td ><a href="{% url 'students:detail' student.id %}">{{ student.surname }} {{ student.name }}</a></td>
+  <td class = "fi">{{ student.address }}</td>
+  <td class = "fi">{{ student.skype }}</td>
+  <td>{% for course in student.courses_list %}
+      <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p>
+	    {% endfor %}<li><a href="{% url 'students:edit' student.id %}">Изменить</a></li><li><a href="{% url 'students:remove' student.id %}">Удалить</a></li> 
+  </td> 
+</tr>
+         {% endfor %}
+    </table>
+<li><a href="{% url 'students:create' %}">Добавить нового студента</a></li>
 {% endblock content %}
+

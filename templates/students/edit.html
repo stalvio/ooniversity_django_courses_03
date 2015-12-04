@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Student list{% endblock title %}
+{% block menu_students %}active{% endblock menu_students %}
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+	{% for message in messages %}
+	<li>{{ message }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+<h class = "text_2">Редактирование данных студента</h>
+<div>
+  <form method="post" >
+  {% csrf_token %}
+  {{ form.as_p }}
+    <input type="submit" value="Изменить" />
+  </form>
+</div>
+{% endblock content %}
