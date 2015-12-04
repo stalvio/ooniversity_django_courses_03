@@ -4,6 +4,7 @@
 {% block menu_students %}active{% endblock menu_students %}
 
 {% block content %}
+
 {% if messages %}
 <ul>
 	{% for message in messages %}
@@ -15,8 +16,8 @@
 <h>Редактирование данных студента</h>
 <div>
   <form method="post" >
-  {% csrf_token %}
-  {{ form.as_p }}
+    {% csrf_token %}
+    {{ form.as_p }}
     <input type="submit" value="Изменить" />
   </form>
 </div>
