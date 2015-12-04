@@ -18,18 +18,19 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
  </head>
-  <body class="fon" background="../static/images/room.jpg">
-   
-<p>Квадратное уравнение a*x*x + b*x + c = 0</p> 
-{{ form.as_p }}	
-<p>{{diskr}}</p>
-<p>{{Korn}}</p>  
+  <body>
+
+   <p>Квадратное уравнение a*x*x + b*x + c = 0</p> 
+<form method="get">
+    {{ form.as_p }}
+{% if diskr %}	
+      <p>{{diskr}}</p>
+      <p>{{Korn}}</p>  
+{% endif %}
+   <input type="submit" value="Решить" />
+</form>
 	
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{% static 'js/bootstrap.js' %}"></script>
-  </body>
+</body>
 </html>
 
 

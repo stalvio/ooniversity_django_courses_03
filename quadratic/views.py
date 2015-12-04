@@ -2,41 +2,33 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import math
+from forms import QuadraticForm
 
 x1=x2= None
  
 def quadratic_results(request):	
-	value = {'a':request.GET['a'], 'b': request.GET['b'], 'c': request.GET['c']}
-	error = {}	
-	flag = False			 
-	for item in value.keys():
-		if item == 'a' and value[item]== '0':
-			error['er_a'] = 'коэффициент при первом слагаемом уравнения не может быть равным нулю'		
-			flag = True
-		elif value[item]== '':
-			error['er_' + item] = 'коэффициент не определен'
-			flag = True  
-		else:				
-			try:
-				value[item] = int(value[item])
-			except ValueError:
-				error['er_' + item] = 'коэффициент не целое число'	
-				flag = True
-	
-	for item in error.keys():
-		value[item] = error[item]    
+	value = {}
+	if request.GET:
+		form = QuadraticForm(request.GET)
+		if form.is_valid():
+			a = form['a'].value()
+			b = form['b'].value()
+			c = form['c'].value()
+		 
+			d = get_diskriminant(a, b, c)			   	
+			value['diskr'], value['Korn'] = d['diskr'], d['Korn']
+			
+	else:
+		form = QuadraticForm()
+	value['form'] = form	
+	return render(request, 'quadratic/results.html', value)	
 
-	if not flag:		
-		di = diskr(value['a'], value['b'], value['c'])
-		value['diskrim'], value['Korn']	= di['diskrim'], di['Korn']
-	return render(request, 'results.html', value)	
-
-def diskr(a,b,c):
+def get_diskriminant(a,b,c):
 	a = float(a)
 	b = float(b)
 	c = float(c)
 	d = int((b ** 2) - (4 * a * c))
-	d_ = {'diskrim':'Дискриминант: %s \n'% d}
+	d_ = {'diskr':'Дискриминант: %s \n'% d}
 	if d == 0:
 		x1 = round(float(- (b / ( 2 * a))))	
 		d_['Korn'] = 'Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = %s' % x1
