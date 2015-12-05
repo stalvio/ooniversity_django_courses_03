@@ -13,6 +13,16 @@
       </div>  
 </div>
 
+{% if messages %}
+<ul>
+	{% for message in messages %}
+	<li>{{ message }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+<li><a href="{% url 'courses:add' %}">Добавить новый курс</a></li>
+
 <h class = "text_2">Список курсов!</h>
 
 <table class="table" border="1" width = "90%">	  
@@ -26,12 +36,15 @@
          <tr>
            <td class = "fi">{{ forloop.counter }}</td> 		
            <td><a href="{% url 'courses:detail' course.id %}">{{ course.name|upper }}</a></td>
-           <td>{{ course.short_description|title }}</td>
+           <td>{{ course.short_description|title }}<li><a href="{% url 'courses:edit' course.id %}">Изменить</a></li>
+						   <li><a href="{% url 'courses:remove' course.id %}">Удалить</a></li></td>
         </tr>
          {% endfor %}
 </table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
+
+
 
 {% endblock content %}
 

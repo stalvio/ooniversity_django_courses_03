@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+
 {% load staticfiles %}
-{% block title %}Student list{% endblock title %}
+
+{% block title %}Student delete{% endblock title %}
+
 {% block menu_students %}active{% endblock menu_students %}
 
 {% block content %}
@@ -8,8 +11,8 @@
 <h>Cтудент {{ form.name }} {{ form.surname }} будет удален</h>
 <div>
   <form method="post" >
-  {% csrf_token %}
-  {{ form.as_p }}
+    {% csrf_token %}
+    
     <input type="submit" value="Удалить" />
   </form>
 </div>

@@ -38,6 +38,8 @@
 	  </tr>	
         </table>
 	<h class = "fi_course"> Курс {{ course_detail.name }}</h>
+	
+  <li><a href="{% url 'courses:add-lesson' course_detail.id %}">Добавить занятие</a></li>
     <table class="table"  border="1">	  
           <tr>
 	    <th class="title_style">#</th>	

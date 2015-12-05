@@ -11,7 +11,7 @@
 	{% endfor %}
 </ul>
 {% endif %}
-
+<li><a href="{% url 'students:create' %}">Добавить нового студента</a></li>
 <h class = "fi_course">Список студентов</h>	
 {% include "include/students_include.html" %}
 	{% for student in students %}
@@ -27,6 +27,6 @@
 </tr>
          {% endfor %}
     </table>
-<li><a href="{% url 'students:create' %}">Добавить нового студента</a></li>
+
 {% endblock content %}
 
