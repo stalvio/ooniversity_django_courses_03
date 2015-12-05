@@ -5,6 +5,13 @@
 {% block url_list_students %}href="{% url 'students:list_view'%}?course_id={{course_num}}"{% endblock url_list_students %}
 
 {% block content %}
+{% if messages %}
+<ul>
+	{% for message in messages %}
+	<li>{{ message }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
     <div class="jumbotron">
 	<h1 class = "text" >{{ course_detail.name }}</h>
 	<p></p>

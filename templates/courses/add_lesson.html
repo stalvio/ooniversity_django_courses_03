@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Lesson_add{% endblock title %}
+
+{% block menu_main %}active{% endblock menu_main %}
+
+{% block content %}
+
+<h>Cоздание нового занятия</h>
+<div>
+  <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+    <input type="submit" value="Создать" />
+  </form>
+</div>
+{% endblock content %}

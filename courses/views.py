@@ -6,6 +6,7 @@ from courses.forms import CourseModelForm, LessonModelForm
 from django.contrib import messages
 
 def detail(request, pk):
+	print 'hello'
 	course_detail = Course.objects.get(id = pk)
 	lessons = course_detail.lesson_set.all()
 	#print course_detail.coach.id
@@ -45,7 +46,7 @@ def remove(request, pk):
 	return render(request, 'courses/remove.html', {'form': form})
 
 def add_lesson(request, pk):
-	print 'hello'
+
 	current_course = Course.objects.get(id=pk)
 	if request.method == "POST":	
 		form = LessonModelForm(request.POST)

@@ -2,9 +2,9 @@
 
 {% load staticfiles %}
 
-{% block title %}Student information edit{% endblock title %}
+{% block title %}Course edit{% endblock title %}
 
-{% block menu_students %}active{% endblock menu_students %}
+{% block menu_main %}active{% endblock menu_main %}
 
 {% block content %}
 
@@ -16,13 +16,13 @@
 </ul>
 {% endif %}
 
-<h>Редактирование данных студента</h>
+<h>Редактирование данных курса</h>
 <div>
 
-  <form method="post" >
+  <form method="post">
   {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Изменить" />
+    <input type="submit" value="Изменить"/>
   </form>
 
 </div>
