@@ -9,11 +9,11 @@
 {% block content %}
 
 <h>Cтудент {{ form.name }} {{ form.surname }} будет удален</h>
-<div>
-  <form method="post" >
+
+  <form method="post">
     {% csrf_token %}
     
     <input type="submit" value="Удалить" />
   </form>
-</div>
+
 {% endblock content %}

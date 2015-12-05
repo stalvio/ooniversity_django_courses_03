@@ -11,7 +11,7 @@
 	{% endfor %}
 </ul>
 {% endif %}
-<li><a href="{% url 'students:create' %}">Добавить нового студента</a></li>
+<li><a href="{% url 'students:add' %}">Добавить нового студента</a></li>
 <h class = "fi_course">Список студентов</h>	
 {% include "include/students_include.html" %}
 	{% for student in students %}
@@ -22,7 +22,8 @@
   <td class = "fi">{{ student.skype }}</td>
   <td>{% for course in student.courses_list %}
       <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p>
-	    {% endfor %}<li><a href="{% url 'students:edit' student.id %}">Изменить</a></li><li><a href="{% url 'students:remove' student.id %}">Удалить</a></li> 
+	    {% endfor %}<li><a href="{% url 'students:edit' student.id %}">Изменить</a></li>
+			<li><a href="{% url 'students:remove' student.id %}">Удалить</a></li> 
   </td> 
 </tr>
          {% endfor %}
