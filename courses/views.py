@@ -13,7 +13,7 @@ class CourseDetailView(DetailView):
 	model = Course
 	template_name = "courses/detail.html"
 	context_object_name = "course_detail"
-	
+
 
 '''
 def detail(request, pk):
@@ -51,6 +51,25 @@ def add(request):
 		form = CourseModelForm()
 	return render(request, 'courses/add.html',{'form': form})
 '''
+class CourseUpdateView(UpdateView):
+	model = Course
+	template_name = 'courses/edit.html'
+
+	def get_context_data(self, **kwargs):
+		context = super(CourseUpdateView, self).get_context_data(**kwargs)
+		context['title'] = "Course update"
+		return context
+
+	def get_success_url(self):
+		return reverse_lazy('courses:edit', kwargs={'pk': self.object.pk})
+
+	
+	def form_valid(self, form):
+		message = super(CourseUpdateView, self).form_valid(form)
+		messages.success(self.request, 'The changes have been saved.')
+		return message
+
+'''
 def edit(request, pk):
 	current_course = Course.objects.get(id=pk)
 	if request.method == 'POST':
@@ -62,7 +81,7 @@ def edit(request, pk):
 	else:
 		form = CourseModelForm(instance=current_course)
 	return render(request, 'courses/edit.html',{'form': form})
-
+'''
 class CourseDeleteView(DeleteView):
 	model = Course
 	success_url = reverse_lazy('index')
@@ -90,6 +109,28 @@ def remove(request, pk):
 		form = removen_course
 	return render(request, 'courses/remove.html', {'form': form})
 '''
+
+class LessonCreateView(CreateView):
+	model = Lesson
+	template_name = "courses/add_lesson.html"
+	context_object_name = "form"
+	#success_url = reverse_lazy('courses:detail')
+
+	def get_context_data(self, **kwargs):
+		context = super(LessonCreateView, self).get_context_data(**kwargs)
+		context['title'] = "Lesson create"
+		return context
+
+	def get_success_url(self):
+		print self.object.pk
+		return reverse_lazy('courses:detail',  kwargs={'pk': self.object.course_id})
+	
+	def form_valid(self, form):
+		message = super(LessonCreateView, self).form_valid(form)
+		messages.success(self.request, "Lesson %s has been successfully added." % (self.object.subject))
+		return message
+
+'''
 def add_lesson(request, pk):
 
 	current_course = Course.objects.get(id=pk)
@@ -102,5 +143,5 @@ def add_lesson(request, pk):
 	else:
 		form = LessonModelForm(initial={'course' : pk})
 	return render(request, 'courses/add_lesson.html',{'form': form})
-
+'''
 # Create your views here.

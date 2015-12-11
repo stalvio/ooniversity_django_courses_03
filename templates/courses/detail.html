@@ -54,7 +54,7 @@
             <th class="title_style">Описание</th>
 	
          </tr>
-	{% for lesson in lessons %}
+	{% for lesson in course_detail.lesson_set.all %}
          <tr>
 	   <td class = "fi">{{ lesson.order }}</td>
            <td class = "fi">{{ lesson.subject }}</td>
