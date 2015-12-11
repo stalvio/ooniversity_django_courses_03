@@ -2,11 +2,13 @@
 
 {% load staticfiles %}
 
-{% block title %}Student list{% endblock title %}
+{% block title %}{{ title }}{% endblock title %}
 
 {% block menu_students %}active{% endblock menu_students %}
 
 {% block content %}
+
+<p>{{ title }}</p>
 
 <h>Cоздание нового студента</h>
 <div>

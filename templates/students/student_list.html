@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block title %}Student list{% endblock title %}
+{% block title %}{{ title }}{% endblock title %}
 {% block menu_students %}active{% endblock menu_students %}
 
 {% block content %} 
@@ -11,11 +11,10 @@
 	{% endfor %}
 </ul>
 {% endif %}
-{{ object }}
-<td class = "fi">{{ student.courses }}</td>
+
 <h class = "fi_course">Список студентов</h>	
 {% include "include/students_include.html" %}
-	{% for student in students %}
+	{% for student in object_list %}
 <tr>
   <td class = "fi">{{ forloop.counter }}</td>
   <td ><a href="{% url 'students:detail' student.id %}">{{ student.surname }} {{ student.name }}</a></td>

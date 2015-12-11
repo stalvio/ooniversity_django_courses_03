@@ -3,33 +3,34 @@
 {% block title %}Student current course information{% endblock title %}
 {% block menu_students %}active{% endblock menu_students %}
 
+
 {% block content %} 
-  <h class = "fi_course">{{ student_detail.name }} {{ student_detail.surname }}</h>
+  <h class = "fi_course">{{ student.name }} {{ student.surname }}</h>
     <div class = "stud_detail">	
      <table class="table" border="1" width = "90%">
       <tr>	   
        <td class = "fi_course">дата рождения</td>
-       <td class = "fi_course">{{ student_detail.date_of_birth }}</td> 
+       <td class = "fi_course">{{ student.date_of_birth }}</td> 
       </tr>
       <tr>
        <td class = "fi_course">адрес</td>
-       <td class = "fi_course">{{ student_detail.address }}</td> 
+       <td class = "fi_course">{{ student.address }}</td> 
       </tr>
       <tr>
        <td class = "fi_course">почта</td>
-       <td class = "fi_course">{{ student_detail.email }}</td> 
+       <td class = "fi_course">{{ student.email }}</td> 
       </tr>	
       <tr>
        <td class = "fi_course">логин skype</td>
-       <td class = "fi_course">{{ student_detail.skype }}</td>
+       <td class = "fi_course">{{ student.skype }}</td>
       </tr>
       <tr> 
        <td class = "fi_course">телефон</td>
-       <td class = "fi_course">{{ student_detail.phone }}</td>
+       <td class = "fi_course">{{ student.phone }}</td>
       </tr>
       <tr> 
        <td class = "fi_course">курсы</td>
-       <td >{% for course in student_detail.course_id %}  <p>1<a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p> {% endfor %}</td>
+       <td >{% for course in student.courses.all %}  <p><a href="{% url 'courses:detail' course.id %}">{{ course }}</a></p> {% endfor %}</td>
       </tr> 	
      </table> 
 </div>
