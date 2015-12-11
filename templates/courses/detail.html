@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block title %}Student current course information{% endblock title %}
 {% block menu_main %}active{% endblock menu_main %}
-{% block url_list_students %}href="{% url 'students:list_view'%}?course_id={{course_num}}"{% endblock url_list_students %}
+{% block url_list_students %}href="{% url 'students:list_view'%}?course_id={{course_detail.id}}"{% endblock url_list_students %}
 
 {% block content %}
 {% if messages %}
