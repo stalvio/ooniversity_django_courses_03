@@ -7,4 +7,6 @@ class Feedback(models.Model):
 	from_email = models.EmailField()
 	create_date = models.DateTimeField(auto_now=True, auto_now_add=False)
 
+	def __unicode__(self):
+		return self.name
 # Create your models here.

@@ -96,12 +96,12 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 EMAIL_HOST = 'localhost'
 
-EMAIL_PORT = '1025'
+EMAIL_PORT = 1025
 
 #EMAIL_HOST_USER
 
 #EMAIL_HOST_PASSWORD
 
-ADMINS = (('stalvio', 'stals_007@mail.ru'), )
+ADMINS = (('stal', 'stals_007@mail.ru'), )
 
-DEFAULT_FROM_EMAIL = "112233@ggg.com"
+#DEFAULT_FROM_EMAIL = 
