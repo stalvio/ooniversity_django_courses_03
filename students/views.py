@@ -87,7 +87,6 @@ class StudentUpdateView(UpdateView):
 	template_name_suffix = '_update_form'
 
 	def get_success_url(self):
-		print 'hello'
 		return reverse_lazy('students:edit', kwargs={'pk': self.object.pk})
 
 	def get_context_data(self, **kwargs):

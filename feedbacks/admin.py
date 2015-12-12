@@ -1,0 +1,11 @@
+from django.contrib import admin
+from feedbacks.models import Feedback
+
+class FeedbackAdmin(admin.ModelAdmin):
+	model = Feedback
+	list_display = ['from_email', 'create_date']	
+	fields = ['name', 'subject', 'message','from_email']
+
+admin.site.register(Feedback, FeedbackAdmin)
+
+# Register your models here.

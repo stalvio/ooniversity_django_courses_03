@@ -19,6 +19,7 @@ INSTALLED_APPS = (
 	'courses',
 	'students',
 	'coaches',
+	'feedbacks',
 )
 
 
@@ -88,5 +89,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = "/static/"
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+EMAIL_HOST = 'localhost'
+
+EMAIL_PORT = '1025'
+
+#EMAIL_HOST_USER
+
+#EMAIL_HOST_PASSWORD
+
+ADMINS = (('stalvio', 'stals_007@mail.ru'), )
+
+DEFAULT_FROM_EMAIL = "112233@ggg.com"
