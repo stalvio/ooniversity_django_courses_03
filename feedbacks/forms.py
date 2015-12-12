@@ -6,5 +6,5 @@ from django import forms
 class  FeedbackForm(forms.ModelForm):
 	class Meta:
 		model = Feedback
-		fields = ['name', 'subject', 'message', 'from_email', 'create_date']
+		fields = '__all__'
 
