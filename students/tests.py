@@ -133,4 +133,6 @@ class StudentsDetailTest(TestCase):
 		client = Client()
 		response = self.client.get('/students/2/')
 		self.assertContains(response, "Django")
+	
+
 # Create your tests here.
