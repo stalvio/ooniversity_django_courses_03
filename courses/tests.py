@@ -123,6 +123,7 @@ class CoursesDetailTest(TestCase):
 		client = Client()
 		response = self.client.get('/courses/2/')
 		self.assertContains(response, 'Greate coach #2')
+		self.assertContains(response, 'Greate coach #3')
 
 	def test_add_lesson(self):
 		new_courses()
@@ -130,6 +131,12 @@ class CoursesDetailTest(TestCase):
 		response = self.client.post("/courses/1/add_lesson", {"subject": "lesson", "description": "test_lesson","course": "PYTHON", "order": 1 })
 		self.assertEqual(response.status_code, 200)
 		
-
+	def test_couach_assistent(self):
+		new_courses()
+		client = Client()
+		response = self.client.get('/courses/3/')
+		self.assertContains(response, '/coaches/3/')
+		self.assertContains(response, '/coaches/1/')
+		
 		
 # Create your tests here.
