@@ -105,3 +105,33 @@ EMAIL_PORT = 1025
 ADMINS = (('stal', 'stals_007@mail.ru'), )
 
 #DEFAULT_FROM_EMAIL = 
+
+LOGGING = {
+    'version': 1,
+    'loggers': 
+	{
+        'courses': {
+            'handlers': ['courses_handlers'],
+            'level': 'DEBUG',
+        },
+	    'students': {
+            'handlers': ['students_handlers'],
+            'level': 'DEBUG',
+        },
+	},
+    'handlers': 
+	{
+        'courses_handlers': {
+	    	'level': 'DEBUG',		
+            'class': 'logging.FileHandler',
+			'filename': os.path.join(BASE_DIR, 'courses_logger'),
+        },
+			'students_handlers': {
+			'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+			'filename': os.path.join(BASE_DIR, 'students_logger'),
+        },
+   
+     },
+}
+
