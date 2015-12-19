@@ -125,13 +125,24 @@ LOGGING = {
 	    	'level': 'DEBUG',		
             'class': 'logging.FileHandler',
 			'filename': os.path.join(BASE_DIR, 'courses_logger'),
+			'formatter': 'simple'
         },
 			'students_handlers': {
 			'level': 'DEBUG',
             'class': 'logging.FileHandler',
 			'filename': os.path.join(BASE_DIR, 'students_logger'),
+			'formatter': 'verbose'
         },
    
      },
+	'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(funcName)s %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+		
 }
 
